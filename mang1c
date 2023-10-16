@@ -1,0 +1,58 @@
+# Khobaitapthuchanhktlt
+/*
+I/ MẢNG MỘT CHIỀU
+1. Hàm main() cho phép nhập số phần tử của mảng
+2. Nhập mảng một chiều gồm n phần tử là số nguyên
+3. Xuất mảng vừa nhập
+4. Tìm giá trị lớn nhất trong mảng
+5. Tính tích các phần tử trong trong mảng.
+6. Đếm và tính tổng các phần tử nguyên tố trong mảng
+7. Nhập vào một giá trị x, in vị trí các phần tử có giá trị bằng x (nếu có), ngược lại
+xuất thông báo.
+8. Sắp xếp mảng tăng dần.
+9. Chèn thêm giá trị x vào mảng
+10.Nhập vào một giá trị k, xóa các phần tử có giá trị bằng k có trong mảng*/
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    
+//Nhap,xuat mang
+int a[10],n,i;
+printf("\n Nhap so phan tu cua mang=");
+scanf("%d",&n);
+   for(int i=0; i<n; i++)
+   {
+       printf("\nNhap a[%d]=",i);
+       scanf("%d",&a[i]);
+   }
+   getch();
+
+
+//Xuat mang
+for(int i=0; i<n; i++)
+printf("\n Phan tu thu a[%d]=%d",i,a[i]); 
+
+//Tim gia tri lon nhat trong mang
+int timmax(int a[], int n) 
+{
+	int max = a[0];
+	for(int i=1; i<n; i++)		
+		if(a[i] > max)
+			max = a[i];
+	return max;
+}
+
+//Tính tích các phần tử trong trong mảng
+
+int tinhtich(int a[], int n)
+{
+    int tich=1;
+    for(int i=0; i<n; i++)
+    {tich=tich*a[i];
+    printf("\n tich mang=%d",tich);
+    }
+}
+   
+}
