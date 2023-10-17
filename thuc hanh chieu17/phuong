@@ -1,0 +1,98 @@
+/*
+I/MANG MOT CHIEU
+1.Ham main() cho phep nhap so phan tu cua mang 
+2.Nhap mang mot chieu gom n phan tu so nguyen 
+3.Xuat mang vua nhap
+4.Tim gia tri lon nhat trong mang
+5.Tinh tich cac phan tu trong mang
+6.Dem va tinh tong cac phan tu nguyen to trong mang
+7.Nhap vao mot gia tri x, in vi tri cac phan tu co gia tri bang x(neu co), nguoc lai xuat thong bao
+8.Sap xep mang tang dan
+9.Chen them gia tri x vao mang
+10.Nhap vao mot gia tri k, xoa cac phan tu co gia tri bang k co trong mang
+ */
+
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+int timmax(int a[], int n);
+int tinhtich(int a[], int n);
+int demptnguyento(int a[], int n);
+
+int main()
+{
+    
+//Nhap,xuat mang
+int a[10],n,i;
+printf("\n Nhap so phan tu cua mang=");
+scanf("%d",&n);
+   for(int i=0; i<n; i++)
+   {
+       printf("\nNhap a[%d]=",i);
+       scanf("%d",&a[i]);
+   }
+//Xuat mang
+for(int i=0; i<n; i++)
+printf("\n Phan tu thu a[%d]=%d",i,a[i]); 
+printf("\n Gia tri lon nhat cua mang=%d",timmax(a,n));
+printf("\n Tich cua mang vua nhap=%d",tinhtich(a,n));
+printf("\n So phan tu nguyen to co trong mang la:%d",demptnguyento(a,n));
+return 0;
+}
+
+//Tim gia tri lon nhat trong mang
+int timmax(int a[], int n)
+{
+	int max=a[0],i;
+	for(int i=1; i<n; i++)		
+		if(a[i] > max)
+			max = a[i];
+	return max;
+}
+
+//Tính tích các ph?n t? trong trong m?ng
+
+int tinhtich(int a[], int n)
+{
+    int tich=1,i;
+    for(int i=0; i<n; i++)
+    tich=tich*a[i];
+return tich;
+    
+}
+
+bool KiemTraNguyenTo(int n)
+{
+    if (n < 2)
+    {
+        return false;
+    }
+    else if (n > 2)
+    {
+        if (n % 2 == 0) 
+        {
+            return false;
+        }
+        for (int i = 3; i <= sqrt((float)n); i += 2) 
+        {
+            if (n % i == 0)
+            {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+int demptnguyento(int a[], int n)
+{
+    int dem = 0,i;
+    for(int i = 0; i < n; i++)
+    {
+        if(KiemTraNguyenTo(a[i]) == true && a[i] < 100)
+        {
+            dem++;
+        }
+    }
+}
+   
