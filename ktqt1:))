@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include<conio.h>
+
+
+struct KhachHang{
+	char HotenKH[30];
+	int MasoKH;
+	char Diachi[100];
+	int Masodien;
+	
+	
+};
+
+typedef struct KhachHang khachhhang;
+
+void Nhapkh(khachhang &x);
+void NhapkhN(khachhang a[],int n);
+void Xuatkh(khachhang &x);
+void XuatkhN(khachhang a[],int n);
+
+int main(){
+	int n;
+	khachhang x, a[20];
+	printf("Nhap so luong khach hang: ");
+	scanf("%d",&n);
+	Nhapkh(x)
+	
+	
+}
+
+void Nhapkh(khachhang &x){
+	fflush(stdin);
+	printf("\n Nhap vao ho ten khach hang:")
+	gets(x.HotenKH);
+	
+	printf("\n Nhap ma so khach hang:");
+	gets(x.MasoKH);
+	scanf("%d",&x MasoKH);
+	
+	printf("\n Nhap muc dich su dung dien cua khach hang:");
+	gets(x.Mucdich);
+	
+	printf("\n Nhap dia chi khach hang:");
+	gets(x.Diachi);
+	
+	printf("\n Nhap ma so su dung dien cua khach hang:");
+	gets(x.Masodien);
+	scanf("%d",&x Masodien);
+	
+	printf("\n Nhap chi so tieu thu dien cuoi thang truoc:");
+	gets(x.Chisodau);
+	scanf("%d",&x Chisodau);
+	
+	printf("\n Nhap chi so tieu thu dien dau thang sau:");
+	gets(x.Chisocuoi);
+	scanf("%d",&x Chisocuoi);
+	
+		
+	}
